@@ -42,10 +42,7 @@ export const router = createBrowserRouter([
           path:'/updateReviews/:id',
           Component:UpDateReviews
         },
-        {
-          path:'/reviews/:id',
-          Component:VeiwDetails
-        },
+      
         {
           path:'/myFavourite',
           Component:MyFavourite
