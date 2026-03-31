@@ -11,23 +11,23 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    console.log(email, password);
+    
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+      
         event.target.reset();
         navigate('/')
         
       })
       .catch((error) => {
-        console.log(error);
+      
       });
   };
 
    const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+       
          navigate('/')
         
       })
