@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllReviews from "../Pages/AllReviews";
 import VeiwDetails from "../Pages/VeiwDetails";
 import UpDateReviews from "../Pages/UpDateReviews";
+import MyFavourite from "../Pages/MyFavourite";
 
 export const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
         {
           path:'/reviews/:id',
           Component:VeiwDetails
+        },
+        {
+          path:'/myFavourite',
+          Component:MyFavourite
         },
         {
         path: "/auth/login",
