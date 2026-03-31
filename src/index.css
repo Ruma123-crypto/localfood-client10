@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "foodTheme";
+  default: true;
+
+  /* main colors */
+  --color-primary: #3b82f6;
+  --color-secondary: #ec4899;
+
+  /* body background */
+  --color-base-100: #f4f6ff;
+
+  /* card background */
+  --color-base-200: #ffffff;
+  --color-base-300: #ffffff;
+
+  /* text */
+  --color-base-content: #1f2937;
+
+  /* accent */
+  --color-accent: #a855f7;
+}
