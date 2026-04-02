@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
-
 const MyFavourite = () => {
   const [favorites, setFavorites] = useState([]);
-  const { user } = useContext(AuthContext); 
+  const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-favorites?email=${user.email}`)
+      fetch(
+        `https://foodlover-server.vercel.app/my-favorites?email=${user.email}`,
+      )
         .then((res) => res.json())
         .then((data) => {
           setFavorites(data);

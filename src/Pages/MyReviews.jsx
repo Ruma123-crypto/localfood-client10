@@ -9,7 +9,7 @@ const MyReviews = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-reviews?email=${user.email}`)
+    fetch(`https://foodlover-server.vercel.app/my-reviews?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -17,8 +17,7 @@ const MyReviews = () => {
       });
   }, [user.email]);
 
-
-   const handleDelete = (id) => {
+  const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -29,7 +28,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/reviews/${id}`, {
+        fetch(`https://foodlover-server.vercel.app/reviews/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -39,13 +38,16 @@ const MyReviews = () => {
               // Remove deleted review from state
               setReviews(reviews.filter((review) => review._id !== id));
             } else {
-              Swal.fire("Error!", data.error || "Failed to delete review", "error");
+              Swal.fire(
+                "Error!",
+                data.error || "Failed to delete review",
+                "error",
+              );
             }
           });
       }
     });
   };
-
 
   // ✅ Loading Spinner
   if (loading) {
@@ -90,7 +92,10 @@ const MyReviews = () => {
                   UPDATE
                 </Link>
 
-                <button  onClick={() => handleDelete(review._id)} className="btn text-white rounded-full bg-linear-to-r from-pink-500 to-red-600">
+                <button
+                  onClick={() => handleDelete(review._id)}
+                  className="btn text-white rounded-full bg-linear-to-r from-pink-500 to-red-600"
+                >
                   Delete
                 </button>
               </td>

@@ -1,6 +1,6 @@
 # Local Food Lovers Network
 
-Live Site: [https://your-live-site-link.com](https://your-live-site-link.com)
+Live Site: [https://unique-cranachan-1ac663.netlify.app/](https://your-live-site-link.com)
 
 ## Project Description
 **Local Food Lovers Network** is a full-stack MERN application that connects food enthusiasts who love exploring local restaurants, street food, or home-cooked meals. Users can share their food experiences, post reviews with photos, and discover what others are enjoying nearby. It’s a community-driven platform celebrating great food, honest opinions, and local flavor.
