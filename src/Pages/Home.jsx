@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../Components/Hero';
 import { useLoaderData } from 'react-router';
 import ReviewCard from '../Components/ReviewCard';
@@ -6,8 +6,16 @@ import FoodCategories from '../Components/FoodCategories ';
 import WhyChooseUs from '../Components/WhyChooseUs';
 
 const Home = () => {
-    const data=useLoaderData();
-    const  reviews =data.slice(0,6);
+    // const data=useLoaderData();
+    // const  reviews =data.slice(0,6);
+    const [reviews,setReviews]=useState([]);
+    useEffect(()=>{
+        fetch(`https://foodlover-server.vercel.app/reviews`).then(res=>res.json() )
+        .then(data=>
+            setReviews(data?.slice(0,6))
+        )
+    },[])
+    console.log(reviews)
     return (
         <div className='my-3'>
             <Hero></Hero>

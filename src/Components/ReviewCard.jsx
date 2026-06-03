@@ -84,7 +84,8 @@ const ReviewCard = ({ reviews }) => {
         </button>
 
         <Link
-          to={`/reviews/${_id}`}
+          to={`/review/${_id}`}
+
           className="btn w-full text-white rounded-full bg-linear-to-r from-pink-500 to-red-600"
         >
           View Details

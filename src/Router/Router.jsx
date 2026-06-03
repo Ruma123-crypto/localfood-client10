@@ -9,9 +9,10 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import AllReviews from "../Pages/AllReviews";
-import VeiwDetails from "../Pages/VeiwDetails";
+
 import UpDateReviews from "../Pages/UpDateReviews";
 import MyFavourite from "../Pages/MyFavourite";
+import ViewDetails from "../Pages/ViewDetails";
 
 export const router= createBrowserRouter([
   {
@@ -21,7 +22,7 @@ export const router= createBrowserRouter([
       {
         index: "true",
         Component: Home,
-        loader: () => fetch("https://foodlover-server.vercel.app/reviews"),
+        // loader: () => fetch("https://foodlover-server.vercel.app/reviews"),
       },
 
       {
@@ -44,6 +45,10 @@ export const router= createBrowserRouter([
         path: "/allReviews",
         Component: AllReviews,
         loader: () => fetch("https://foodlover-server.vercel.app/reviews"),
+      },
+      {
+        path: "/review/:id",
+        element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
       },
       {
         path: "/updateReviews/:id",
